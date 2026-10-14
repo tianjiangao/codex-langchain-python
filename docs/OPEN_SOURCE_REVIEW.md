@@ -1,6 +1,6 @@
 # Open-source candidate review
 
-Status: **local candidate acceptance PASS; publication NOT AUTHORIZED**.
+Status: **local candidate acceptance PASS; GitHub publication explicitly authorized by the maintainer**. PyPI publication remains out of scope. This review records the pre-publication test evidence; remote CI results must be checked on GitHub.
 
 ## Isolation and tests
 
@@ -25,8 +25,8 @@ Status: **local candidate acceptance PASS; publication NOT AUTHORIZED**.
 - No automatic uploading, publish job, Codex login or secret use in GitHub Actions. Tracing disabled during test runs. API-key authentication is refused by the adapter.
 - The scanner is bounded, pattern-based evidence rather than a proof that every possible secret is absent. Human review remains required before publication; diagnostics are sensitive by default and not automatically sanitized by the runtime API.
 
-## Remaining limits / publication gate
+## Remaining limits / publication scope
 
-Tool Calling remains experimental upstream. Token stream/astream, Native Thread Resume, async structured-wrapper cancellation, Windows/macOS/untested Python/runtime combinations, fault-injected live transport recovery and distributed exactly-once side effects are not certified. Remote Actions has not run because no remote repository was created.
+Tool Calling remains experimental upstream. Token stream/astream, Native Thread Resume, async structured-wrapper cancellation, Windows/macOS/untested Python/runtime combinations, fault-injected live transport recovery and distributed exactly-once side effects are not certified. Remote Actions had not run at local candidate acceptance; the public repository includes offline-only CI.
 
-Provisional names were checked against public PyPI/GitHub endpoints and were not found, but are not reserved and no owner was selected. A future approved publication must recheck owner/name, license/provenance, latest archive security checks and distribution contents. No repository has been created remotely and no package has been uploaded.
+The authenticated maintainer account is `tianjiangao`. GitHub confirmed `codex-langchain-python` is available in that account immediately before creation. Pre-publication tree/history/archive scans must pass before pushing. Distribution names are not reserved on PyPI; no package has been uploaded.

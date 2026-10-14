@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "langchain-codex-sdk"
 version = "0.1.0a1"
-description = "Community LangChain chat model using the official local Codex Python SDK"
+description = "Codex SDK for LangChain and LangGraph agents: tools, Pydantic output and isolated threads"
 readme = "README.md"
 requires-python = ">=3.11"
 license = "Apache-2.0"
@@ -22,6 +22,12 @@ dependencies = [
   "pydantic>=2.14.1,<3",
   "jsonschema>=4.25,<5",
 ]
+
+[project.urls]
+Homepage = "https://github.com/tianjiangao/codex-langchain-python"
+Repository = "https://github.com/tianjiangao/codex-langchain-python"
+Issues = "https://github.com/tianjiangao/codex-langchain-python/issues"
+Documentation = "https://github.com/tianjiangao/codex-langchain-python/blob/main/README.md"
 
 [project.optional-dependencies]
 langgraph = ["langgraph>=1.2.14,<2", "langgraph-checkpoint-sqlite>=3.1.1,<4"]

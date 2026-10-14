@@ -1,14 +1,34 @@
-# LangChain Codex SDK — community alpha
+# Codex × LangChain — Build Real Multi-Agent Workflows
 
-A standalone Python `BaseChatModel` adapter for the **official local `openai-codex` SDK**. It was extracted from a validated multi-agent integration rather than built as a new provider framework. **TradingAgents is not a dependency.**
+**Bring the official Codex Python SDK into LangChain and LangGraph.** Build agents with real tool roundtrips, native Pydantic output, isolated execution contexts, and inspectable usage and recovery records.
 
-This is an independent community project, **not an official OpenAI or LangChain provider**. Distribution name `langchain-codex-sdk`, import `langchain_codex_sdk`, and repository name `codex-langchain-python` are provisional. Nothing has been published to GitHub or PyPI.
+[![Offline CI](https://github.com/tianjiangao/codex-langchain-python/actions/workflows/ci.yml/badge.svg)](https://github.com/tianjiangao/codex-langchain-python/actions/workflows/ci.yml)
+[![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
+
+Extracted from a working multi-agent integration, this standalone Python `BaseChatModel` adapter lets researchers use familiar LangChain messages and original LangGraph nodes with the **official local `openai-codex` SDK**. **TradingAgents is not a dependency.**
+
+Independent community project; **not an official OpenAI or LangChain provider**. Alpha distribution `langchain-codex-sdk`, import `langchain_codex_sdk`. Install from this repository; no PyPI release yet.
+
+## Evidence over demos
+
+| Validation | What actually passed |
+| --- | --- |
+| Independent package | **127 offline tests**, plus an optional original-framework integration test |
+| Live SDK integration | **5 real tasks**: sync/async invocation, isolated agent contexts, LangGraph ToolNode, native Pydantic output, and installed-wheel invocation |
+| Source multi-agent case | **10/10 SDK tasks, 15 financial tool calls**, original TradingAgents two-analyst full Graph from START to END; three original structured schemas |
+| Source regression | **1,430 original offline tests** passed after extraction |
+
+The full financial Graph is evidence from the source integration **before extraction**, not a claim that the standalone package has rerun that study. No original financial data or private research logs are published. See [live validation](docs/LIVE_VALIDATION.md), [TradingAgents case](docs/TRADINGAGENTS.md), and [compatibility and limits](COMPATIBILITY.md).
+
+**Start here:** [Quickstart](#quickstart) · [ToolNode example](examples/tool_graph.py) · [Structured output](#native-structured-output) · [Multi-agent live suite](examples/live_suite.py)
 
 ## Install
 
-Python 3.11+ on POSIX; locally tested on Linux x86-64 / Python 3.12. From a source checkout:
+Python 3.11+ on POSIX; locally tested on Linux x86-64 / Python 3.12. Clone the public source repository:
 
 ```bash
+git clone https://github.com/tianjiangao/codex-langchain-python.git
+cd codex-langchain-python
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install .
@@ -128,4 +148,4 @@ This release is for **user-controlled local experiments** with managed Codex log
 
 Apache-2.0, with retained MIT design-reference notices/texts. See [NOTICE](NOTICE), [provenance](docs/PROVENANCE.md), [security](SECURITY.md) and [compatibility](COMPATIBILITY.md).
 
-Token `stream`/`astream` explicitly raise `NotImplementedError` (**UNVERIFIED**). Native Thread Resume, multimodal input, Windows locks/runtime, broader SDK versions and crash-atomic external side effects are not claimed. No original financial data, private research reports or raw sensitive logs are included. Publication requires a separate explicit maintainer approval; this checkout has no configured remote or publish workflow.
+Token `stream`/`astream` explicitly raise `NotImplementedError` (**UNVERIFIED**). Native Thread Resume, multimodal input, Windows locks/runtime, broader SDK versions and crash-atomic external side effects are not claimed. No original financial data, private research reports or raw sensitive logs are included. GitHub source publication is maintainer-approved. PyPI publishing requires a separate release decision; CI contains no publishing workflow.

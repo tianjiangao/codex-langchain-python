@@ -14,8 +14,8 @@ Async cancellation is best effort. Tool execution may already have happened. SQL
 
 ## Reporting
 
-Do not post credentials, private logs or full checkpoints in an issue. Use a private channel to the maintainer who supplied this checkout; a public security-advisory channel will be assigned only if publication is approved. Provide versions, a minimal synthetic reproducer and sanitized error category instead of authentication material.
+Do not post credentials, private logs or full checkpoints in an issue. Use a private channel already established with the maintainer. If no private contact is available, open an issue requesting a private reporting channel without disclosing vulnerability details or sensitive records. Provide versions, a minimal synthetic reproducer and sanitized error category instead of authentication material.
 
 ## Release review
 
-A allowlist-oriented tree/archive/Git-history scanner is provided in `scripts/audit_release.py`. It rejects common credential patterns, personal absolute paths, credential filenames and private artifact paths without printing matched values. It cannot prove the absence of every possible secret. No local authentication file is inspected during this review. Initial Git history is new, not imported from the source project. A human must recheck before any public publication.
+An allowlist-oriented tree/archive/Git-history scanner is provided in `scripts/audit_release.py`. It rejects common credential patterns, personal absolute paths, credential filenames and private artifact paths without printing matched values. It cannot prove the absence of every possible secret. No local authentication file is inspected during this review. Initial Git history is new, not imported from the source project. A human must recheck before any public publication.

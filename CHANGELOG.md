@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.0a1 — unreleased local candidate
+## 0.1.0a1 — GitHub source alpha (PyPI unreleased)
 
 - Extract verified runtime, messages, native dynamic tools, schema normalization, usage and checkpoint helpers from Codex Adapter source commit `194454e`.
 - Expose community `ChatCodexSDK`, `UsageLedger` and `CheckpointStore` without TradingAgents dependency.
@@ -13,4 +13,4 @@
 - Reject unsupported constructor/invocation options rather than silently treating token/sampling controls as enforced.
 - Keep raw live records private and exclude original financial data and research logs.
 
-No PyPI release or public GitHub repository has been created.
+Public GitHub source publication approved by the maintainer. No PyPI package has been uploaded.
