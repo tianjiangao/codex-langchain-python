@@ -237,7 +237,9 @@ def test_native_sdk_mock_fault_marks_unknown_and_preserves_budget(tmp_path, monk
         prompt="OFFLINE",
         cwd=str(tmp_path),
         codex_bin=None,
-        timeout=0.05,
+        # Keep the short deadline only for the timeout fault. Transport/cancel
+        # assertions must not race CI scheduling or ledger filesystem latency.
+        timeout=0.05 if fault == "timeout" else 5,
         tools=[],
         digest="offline",
         resource_guard=guard,

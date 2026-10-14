@@ -123,7 +123,7 @@ The original Pydantic class defines the business value. A separate strict wire s
 
 ```bash
 python -m pip install '.[dev]'
-pytest -q                  # Offline; real SDK startup forbidden, live tests skipped
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 pytest -q  # Offline; live SDK tests skipped
 ruff check src tests examples integrations scripts
 python -m build
 python -m twine check dist/*

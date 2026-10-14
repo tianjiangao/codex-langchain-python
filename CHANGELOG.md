@@ -1,5 +1,7 @@
 # Changelog
 
+- First remote CI exposed a mock fault-test scheduling race on Python 3.13: reserve the short deadline for timeout injection, allow transport/cancellation tests their own deadline, and complete all matrix jobs even if one fails.
+
 ## 0.1.0a1 — GitHub source alpha (PyPI unreleased)
 
 - Extract verified runtime, messages, native dynamic tools, schema normalization, usage and checkpoint helpers from Codex Adapter source commit `194454e`.

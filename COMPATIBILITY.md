@@ -24,7 +24,7 @@ Status labels distinguish verified behavior from unimplemented or experimental p
 | External tool exactly-once effects | UNVERIFIED | UNVERIFIED | Requires caller idempotency/transactions, not guaranteed by this adapter |
 | Windows | Unsupported currently | Not attempted | fcntl-based process/checkpoint locks |
 | macOS / other architectures | UNVERIFIED | Not attempted | Linux only locally verified |
-| Python 3.11 / 3.13 | CI configured, not locally run | UNVERIFIED | Local verification was 3.12.14; remote GitHub Actions not yet executed |
+| Python 3.11 / 3.12 / 3.13 | [Remote offline CI](https://github.com/tianjiangao/codex-langchain-python/actions/workflows/ci.yml) | Real SDK verified on 3.12 only | See the linked run for current matrix results; local live verification was 3.12.14 |
 
 ## Tested versions
 
