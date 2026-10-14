@@ -1,0 +1,28 @@
+LangChain Codex SDK — community extraction
+
+This distribution contains modified code extracted from the Codex Adapter in
+TradingAgents-Codex, source commit 194454ec52cebb37bc2b0803e732ffedc7687567.
+The source project is based on TauricResearch/TradingAgents v0.6.0 and distributed
+under Apache License 2.0. That license is retained in LICENSE. No official
+TradingAgents financial agent, financial schema, vendor, data set, report or
+original Git history is included in the core package. No upstream NOTICE file
+was found in the source checkout; this file records extraction provenance and
+modifications and is not presented as an upstream-authored notice.
+
+Modifications: package/module/public class names, generic tool binding, SDK
+runtime selection, isolated temporary working directories, unified usage
+recording, executor-based asynchronous calls, explicit streaming refusal,
+independent tests/examples, and optional integration boundaries. See
+CHANGELOG.md and docs/PROVENANCE.md.
+
+Design references originally acknowledged in the Adapter:
+- euan-cowie/langchain-codex, MIT, Copyright (c) 2026 Euan Cowie.
+  Role-labelled messages, schema JSON parsing/validation, tool conversion design.
+- cgaravitoq/open-langchain, MIT, Copyright (c) 2026 cgaravitoq.
+  Python LangChain interface/message design only; no client or OAuth code reused.
+- bytedance/deer-flow, MIT, Copyright (c) 2025 Bytedance Ltd. and/or its affiliates;
+  Copyright (c) 2025-2026 DeerFlow Authors.
+  Message/tool correlation/usage layout design only; no auth or HTTP code reused.
+Full MIT texts and original copyright notices are in licenses/ and included in
+wheel/sdist license metadata. These third-party works retain their own licenses.
+The official SDK is installed as a dependency, not vendored or relicensed.

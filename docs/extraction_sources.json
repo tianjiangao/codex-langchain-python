@@ -1,0 +1,34 @@
+{
+  "source_repository": "TradingAgents Codex Adapter worktree",
+  "source_commit": "194454ec52cebb37bc2b0803e732ffedc7687567",
+  "files": {
+    "src/langchain_codex_sdk/chat_models.py": {
+      "upstream_file": "tradingagents/llm_clients/codex_client.py",
+      "source_sha256": "331cd8205805cf2b052111c5f0f234aa36292248e7c2c113bfc633aba2ee66a4"
+    },
+    "src/langchain_codex_sdk/runtime.py": {
+      "upstream_file": "tradingagents/llm_clients/codex_runtime.py",
+      "source_sha256": "f32d08f193bd83391a383587984947773979df9acc1a561a0044e3f4f8af3be9"
+    },
+    "src/langchain_codex_sdk/messages.py": {
+      "upstream_file": "tradingagents/llm_clients/codex_messages.py",
+      "source_sha256": "35b936396ca478df04843b84939e7dcc9a0cdef7092885cf25b3981010794081"
+    },
+    "src/langchain_codex_sdk/tools.py": {
+      "upstream_file": "tradingagents/llm_clients/codex_tools.py",
+      "source_sha256": "66a5754feda4d7d7f9fb01a7259d5e6b5e58125cdc2859655dadda3cf859a7a3"
+    },
+    "src/langchain_codex_sdk/schema.py": {
+      "upstream_file": "tradingagents/llm_clients/codex_schema.py",
+      "source_sha256": "0e7a3d0488ec32d448a0dff219c69e974474ed3913d530cb49935daccc388fa7"
+    },
+    "src/langchain_codex_sdk/usage.py": {
+      "upstream_file": "tradingagents/llm_clients/codex_resources.py",
+      "source_sha256": "c8e959d9862e618a19e0a93ad6c17231b9ccafd1d27cde1b67799a705273e3a8"
+    },
+    "src/langchain_codex_sdk/recovery.py": {
+      "upstream_file": "tradingagents/llm_clients/codex_recovery.py",
+      "source_sha256": "24e3b6ecb1ecec7bf8f4df965d25e6fc8f33dca3ceaef391ca2bbd2b1c68d746"
+    }
+  }
+}

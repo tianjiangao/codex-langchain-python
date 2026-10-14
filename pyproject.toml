@@ -1,0 +1,47 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "langchain-codex-sdk"
+version = "0.1.0a1"
+description = "Community LangChain chat model using the official local Codex Python SDK"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE", "licenses/*MIT_LICENSE"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python :: 3",
+  "Operating System :: POSIX :: Linux",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+  "openai-codex==0.162.1",
+  "langchain-core>=1.6.9,<2",
+  "pydantic>=2.14.1,<3",
+  "jsonschema>=4.25,<5",
+]
+
+[project.optional-dependencies]
+langgraph = ["langgraph>=1.2.14,<2", "langgraph-checkpoint-sqlite>=3.1.1,<4"]
+dev = ["pytest>=8,<10", "ruff>=0.16,<1", "build>=1.2,<2", "twine>=6,<7", "langgraph>=1.2.14,<2", "langgraph-checkpoint-sqlite>=3.1.1,<4"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/langchain_codex_sdk"]
+[tool.hatch.build.targets.sdist]
+include = ["src", "tests", "examples", "integrations", "docs", "scripts", ".github", "*.md", "LICENSE", "NOTICE", "licenses", "pyproject.toml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+markers = ["live: explicit local Codex login and service integration; disabled without opt-in", "tradingagents: separately installed optional TradingAgents checkout"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "B", "UP", "C4", "SIM"]
+ignore = ["E501"]
+[tool.ruff.lint.per-file-ignores]
+"src/langchain_codex_sdk/__init__.py" = ["F401"]

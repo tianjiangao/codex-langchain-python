@@ -1,0 +1,37 @@
+{
+  "checked_at_utc": "2026-10-14T02:31:10.822875+00:00",
+  "provisional_only": true,
+  "note": "No names reserved; GitHub names are owner-scoped and owner is not selected. Recheck before publication.",
+  "results": [
+    {
+      "name": "langchain-codex-sdk",
+      "service": "PyPI",
+      "status": 404,
+      "note": "No current project at normalized name"
+    },
+    {
+      "name": "langchain-codex-sdk",
+      "service": "GitHub",
+      "status": 200,
+      "result": {
+        "total_count": 0,
+        "matches": []
+      }
+    },
+    {
+      "name": "codex-langchain-python",
+      "service": "PyPI",
+      "status": 404,
+      "note": "No current project at normalized name"
+    },
+    {
+      "name": "codex-langchain-python",
+      "service": "GitHub",
+      "status": 200,
+      "result": {
+        "total_count": 0,
+        "matches": []
+      }
+    }
+  ]
+}
