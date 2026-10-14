@@ -28,14 +28,16 @@ langgraph = ["langgraph>=1.2.14,<2", "langgraph-checkpoint-sqlite>=3.1.1,<4"]
 dev = ["pytest>=8,<10", "ruff>=0.16,<1", "build>=1.2,<2", "twine>=6,<7", "langgraph>=1.2.14,<2", "langgraph-checkpoint-sqlite>=3.1.1,<4"]
 
 [tool.hatch.build.targets.wheel]
+core-metadata-version = "2.4"
 packages = ["src/langchain_codex_sdk"]
 [tool.hatch.build.targets.sdist]
+core-metadata-version = "2.4"
 include = ["src", "tests", "examples", "integrations", "docs", "scripts", ".github", "*.md", "LICENSE", "NOTICE", "licenses", "pyproject.toml"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-ra --strict-markers"
-markers = ["live: explicit local Codex login and service integration; disabled without opt-in", "tradingagents: separately installed optional TradingAgents checkout"]
+markers = ["unit: optional upstream offline fixture module", "live: explicit local Codex login and service integration; disabled without opt-in", "tradingagents: separately installed optional TradingAgents checkout"]
 
 [tool.ruff]
 line-length = 100

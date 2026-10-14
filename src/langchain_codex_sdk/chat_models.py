@@ -21,13 +21,14 @@ from langchain_core.language_models.chat_models import BaseChatModel
 from langchain_core.messages import AIMessage
 from langchain_core.outputs import ChatGeneration, ChatResult
 from langchain_core.runnables import RunnableLambda
-from pydantic import BaseModel, Field, PrivateAttr
+from pydantic import BaseModel, ConfigDict, Field, PrivateAttr
 
 from .messages import parse_json, serialize_messages
 from .schema import CodexTurnError, normalize_output_schema, validate_wire, value_changes
 
 
 class ChatCodexSDK(BaseChatModel):
+    model_config = ConfigDict(extra="forbid", hide_input_in_errors=True)
     model: str = Field(default="gpt-6.1-sol", min_length=1)
     working_directory: str = Field(
         default_factory=lambda: tempfile.mkdtemp(prefix="langchain-codex-")
@@ -70,6 +71,9 @@ class ChatCodexSDK(BaseChatModel):
     def _generate(self, messages, stop=None, run_manager=None, **kwargs) -> ChatResult:
         if stop:
             raise ValueError("Stop sequences are not implemented by this minimal Codex adapter")
+        unsupported = set(kwargs) - {"codex_tools", "codex_output_schema", "_cancel_scope"}
+        if unsupported:
+            raise ValueError(f"Unsupported Codex invocation options: {sorted(unsupported)}")
         instructions, prompt = serialize_messages(messages)
         digest = hashlib.sha256((instructions + "\n" + prompt).encode()).hexdigest()
         if kwargs.get("codex_output_schema") is None and digest in self._failed_structured_prompts:

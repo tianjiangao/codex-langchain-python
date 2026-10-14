@@ -1,0 +1,16 @@
+# Changelog
+
+## 0.1.0a1 — unreleased local candidate
+
+- Extract verified runtime, messages, native dynamic tools, schema normalization, usage and checkpoint helpers from Codex Adapter source commit `194454e`.
+- Expose community `ChatCodexSDK`, `UsageLedger` and `CheckpointStore` without TradingAgents dependency.
+- Generalize caller-bound tool names and security instructions; preserve correlation/allowlist validation.
+- Use official SDK bundled runtime by default, isolate temporary working directories, and identify the client as a community adapter.
+- Unify text/tool/structured calls under the validated native lifecycle so failures retain usage evidence.
+- Add executor-based `ainvoke` and request-scoped best-effort cancellation; do not claim native async transport.
+- Refuse unverified token streaming explicitly; preserve Pydantic and strict wire validation.
+- Add offline CI, independent arithmetic live suite, optional original-framework example and provenance/licenses.
+- Reject unsupported constructor/invocation options rather than silently treating token/sampling controls as enforced.
+- Keep raw live records private and exclude original financial data and research logs.
+
+No PyPI release or public GitHub repository has been created.

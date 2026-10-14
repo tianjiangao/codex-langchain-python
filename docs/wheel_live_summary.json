@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "scope": "final installed wheel; no TradingAgents/LangGraph",
+  "model": "gpt-6.1-sol",
+  "response": "WHEEL_OK",
+  "usage": {
+    "input": 6202,
+    "output": 7,
+    "cached_input_subset": 0,
+    "total": 6209
+  },
+  "sdk_tasks": 1,
+  "unknown_tasks": 0,
+  "elapsed_seconds": 9.197548471041955
+}

@@ -143,3 +143,29 @@ def test_runtime_uses_pinned_sdk_and_only_config_names(tmp_path, monkeypatch):
     assert cfg.codex_bin is None
     assert "mcp_servers.local_fixture.enabled=false" in cfg.config_overrides
     assert cfg.env == {"OPENAI_API_KEY": "", "CODEX_API_KEY": ""}
+
+
+def test_api_key_auth_is_refused_without_claiming_managed_login(sdk):
+    from types import SimpleNamespace
+
+    sdk.account_read = lambda *a: SimpleNamespace(
+        model_dump=lambda **k: {"account": {"type": "apiKey"}}
+    )
+    with ChatCodexSDK() as llm:
+        with pytest.raises(RuntimeError, match="ChatGPT-managed login required"):
+            llm.invoke("OFFLINE")
+        assert llm.evidence[-1]["auth_kind"] is None
+        assert not hasattr(sdk.clients[0], "params")
+
+
+@pytest.mark.parametrize("name", ["temperature", "max_tokens", "api_key"])
+def test_unsupported_options_are_never_silently_accepted(name):
+    from pydantic import ValidationError
+
+    with pytest.raises(ValidationError) as exc:
+        ChatCodexSDK(**{name: "OFFLINE_UNSUPPORTED"})
+    assert "OFFLINE_UNSUPPORTED" not in str(exc.value)
+    llm = ChatCodexSDK()
+    with pytest.raises(ValueError, match="Unsupported Codex invocation options"):
+        llm.invoke("OFFLINE", **{name: "OFFLINE_UNSUPPORTED"})
+    assert not llm.evidence

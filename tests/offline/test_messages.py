@@ -55,3 +55,14 @@ def test_structured_validation_is_not_silently_bypassed(monkeypatch):
 def test_unsupported_schema_modes_raise():
     with pytest.raises(ValueError, match="outputSchema"):
         ChatCodexSDK().with_structured_output({"type": "object"}, method="function_calling")
+
+
+def test_public_package_does_not_import_framework():
+    import importlib.metadata
+    import sys
+
+    dependencies = importlib.metadata.requires("langchain-codex-sdk")
+    assert all("tradingagents" not in value.lower() for value in dependencies)
+    assert not any(
+        name == "tradingagents" or name.startswith("tradingagents.") for name in sys.modules
+    )

@@ -1,0 +1,87 @@
+{
+  "status": "PASS",
+  "model": "gpt-6.1-sol",
+  "sdk_task_target": 4,
+  "scope": "generic two-agent merge + original ToolNode + strict Pydantic; not a financial study",
+  "thread_isolation": "PASS",
+  "graph_merge": "PASS",
+  "invoke": "PASS",
+  "ainvoke": "PASS",
+  "toolnode": "PASS",
+  "pydantic": "PASS",
+  "concurrent_overlap_seconds": 13.554109627963044,
+  "elapsed_seconds": 37.16387903899886,
+  "usage": {
+    "input": 31288,
+    "output": 70,
+    "cached_input_subset": 6144,
+    "total": 31358
+  },
+  "sdk_tasks": 4,
+  "unknown_tasks": 0,
+  "sdk": "openai-codex 0.162.1",
+  "runtime_distribution": "openai-codex-cli-bin 0.162.1",
+  "offline_ci": "127 pass; optional framework and live tests disabled by default",
+  "roles": [
+    {
+      "role": "alpha",
+      "thread_alias": "thread_1",
+      "usage": {
+        "cacheWriteInputTokens": 0,
+        "cachedInputTokens": 0,
+        "inputTokens": 6207,
+        "outputTokens": 7,
+        "reasoningOutputTokens": 0,
+        "totalTokens": 6214
+      },
+      "elapsed_seconds": 13.553
+    },
+    {
+      "role": "beta",
+      "thread_alias": "thread_2",
+      "usage": {
+        "cacheWriteInputTokens": 0,
+        "cachedInputTokens": 0,
+        "inputTokens": 6207,
+        "outputTokens": 7,
+        "reasoningOutputTokens": 0,
+        "totalTokens": 6214
+      },
+      "elapsed_seconds": 14.928
+    },
+    {
+      "role": "tools",
+      "thread_alias": "thread_3",
+      "usage": {
+        "cacheWriteInputTokens": 0,
+        "cachedInputTokens": 6144,
+        "inputTokens": 12569,
+        "outputTokens": 28,
+        "reasoningOutputTokens": 0,
+        "totalTokens": 12597
+      },
+      "elapsed_seconds": 14.276
+    },
+    {
+      "role": "schema",
+      "thread_alias": "thread_4",
+      "usage": {
+        "cacheWriteInputTokens": 0,
+        "cachedInputTokens": 0,
+        "inputTokens": 6305,
+        "outputTokens": 28,
+        "reasoningOutputTokens": 0,
+        "totalTokens": 6333
+      },
+      "elapsed_seconds": 7.908
+    }
+  ],
+  "authentication": "official SDK validated managed-chatgpt; no auth material retained in public record",
+  "raw_logs": "Not distributed; private local evidence only",
+  "structured_result": {
+    "result": 12,
+    "quality": "exact",
+    "optional_value": null,
+    "note": null
+  }
+}

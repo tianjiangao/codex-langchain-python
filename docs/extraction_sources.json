@@ -29,6 +29,17 @@
     "src/langchain_codex_sdk/recovery.py": {
       "upstream_file": "tradingagents/llm_clients/codex_recovery.py",
       "source_sha256": "24e3b6ecb1ecec7bf8f4df965d25e6fc8f33dca3ceaef391ca2bbd2b1c68d746"
+    },
+    "integrations/role_context.py": {
+      "upstream_file": "tradingagents/llm_clients/codex_graph.py",
+      "source_sha256": "d953dc2518209a2331f77b016a0b1a3c5d701f961b0d8b948d14fd44c400cdeb"
     }
+  },
+  "upstream_notice": "NONE in inspected source tracked tree",
+  "license_sha256": {
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "licenses/open_langchain_MIT_LICENSE": "23bc47fd1b4d768149bc6e9870924695511b2ce37c8838d7c82000a3b2a2dfdf",
+    "licenses/deer_flow_MIT_LICENSE": "b23dff4d4bac8d17b6efaaa7e88c2b730149c4dda45699ce676b719cfdffe7e1",
+    "licenses/langchain_codex_MIT_LICENSE": "d274ab2c4b855e3f07a8c9992a680a9e4a41826a66b9964a2210a70eb98f8b94"
   }
 }

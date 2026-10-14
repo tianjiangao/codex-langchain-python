@@ -102,6 +102,7 @@ class NativeToolSession:
         self.cancel_lock = threading.Lock()
         self.cancel_requested = threading.Event()
         self.actual_model = None
+        self.auth_kind = None
         self.resource_guard = resource_guard
         self._resource_settled = False
         self.output_schema = output_schema
@@ -194,6 +195,7 @@ class NativeToolSession:
             )
             if (account.get("account") or {}).get("type") != "chatgpt":
                 raise RuntimeError("ChatGPT-managed login required")
+            self.auth_kind = "chatgpt"
             thread = self.client.thread_start(
                 {
                     "cwd": cwd,
@@ -348,7 +350,7 @@ class NativeToolSession:
                 "turn_id": self.turn_id,
                 "model": self.model,
                 "actual_model": getattr(self, "actual_model", None),
-                "auth_kind": "chatgpt",
+                "auth_kind": self.auth_kind,
                 "usage": self.usage,
                 "events": self.events,
                 "elapsed_seconds": round(time.monotonic() - self.started, 3),

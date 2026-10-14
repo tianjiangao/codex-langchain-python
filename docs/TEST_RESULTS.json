@@ -1,0 +1,58 @@
+{
+  "offline_ci": {
+    "status": "PASS",
+    "passed": 127,
+    "skipped": 2,
+    "skips": [
+      "live opt-in absent",
+      "optional TradingAgents checkout absent"
+    ]
+  },
+  "new_provider_original_framework_offline": {
+    "status": "PASS",
+    "passed": 1,
+    "original_full_graph": true,
+    "original_schema_count": 3,
+    "mock_sdk": true
+  },
+  "source_regression": {
+    "status": "PASS",
+    "passed": 1430,
+    "subtests": 99,
+    "skipped": 1,
+    "deselected": 1,
+    "warnings": 20,
+    "source_commit": "194454e",
+    "source_unchanged": true
+  },
+  "live": {
+    "status": "PASS",
+    "sdk_tasks": 5,
+    "total_tokens": 37567,
+    "unknown_tasks": 0,
+    "fallback": 0,
+    "retries": 0,
+    "suite_tasks": 4,
+    "final_wheel_tasks": 1
+  },
+  "independent_core_wheel": {
+    "status": "PASS",
+    "tradingagents_installed": false,
+    "langgraph_installed": false,
+    "base_chat_model_invoke": "offline and actual SDK PASS"
+  },
+  "build_and_twine": {
+    "status": "PASS",
+    "metadata_version": "2.4",
+    "wheel_and_sdist": true
+  },
+  "remote_github_actions": "UNVERIFIED \u2014 configured, no remote exists",
+  "unverified": [
+    "token streaming",
+    "Native Thread Resume",
+    "async structured-wrapper cancellation",
+    "distributed exactly-once tool effects",
+    "other platforms/Python/SDK combinations",
+    "financial data redistribution"
+  ]
+}

@@ -12,7 +12,7 @@ modifications and is not presented as an upstream-authored notice.
 Modifications: package/module/public class names, generic tool binding, SDK
 runtime selection, isolated temporary working directories, unified usage
 recording, executor-based asynchronous calls, explicit streaming refusal,
-independent tests/examples, and optional integration boundaries. See
+independent tests/examples, explicit unsupported-option rejection, and optional integration boundaries. See
 CHANGELOG.md and docs/PROVENANCE.md.
 
 Design references originally acknowledged in the Adapter:
